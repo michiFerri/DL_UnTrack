@@ -1,0 +1,7 @@
+squirrel_wild_1
+pigeon01_wild_1
+box_darkroom_noocc_7_1
+developmentboard_indoor_4
+ball20_indoor_4
+box_humans_room_occ_1_1
+bag01_indoor_1
