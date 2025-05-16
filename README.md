@@ -1,4 +1,3 @@
-#README
 Here follow more details about this repository.
 
 The project is a copy from the original one [https://github.com/Zongwei97/UnTrack]. 
@@ -16,6 +15,20 @@ To run the scripts (train or eval), is necessary to download the models (.pth fi
 
 Note: pretrained model name is left as in original work (OSTrack_ep0300.pth.tar) to avoid parsing errors in the framework, same for fine-tuned model (UnTrack.pth.tar). 
 
+## Run scripts
 
+To run fine-tune training, the main script is **train.sh**, which basically execute the python script as follows:
+
+    python tracking/train.py --script untrack --config final_deep_rgbd_config --save_dir ./output_x --mode single  
+
+Where **train.py** in the entry point for pytorch framework and **--config** refers to the .yaml file being selected from experiments/ folder (this is the file that sets all parameters required for fine-tuning: learning rate, epochs, etc..)
+
+To run the evalutation, the script **eval_rgbd.sh** does the job by calling the vot-toolik utilities: 
+
+    cd vot2022_rgbd_workspace
+    vot evalutate --workspace ./ untrack_deep
+    vot analysis --nocache --name untrack_deep
+
+This step produces new folders **results/** and **analysis/** into vot2022_rgbd_workspace, and analysis contain the html file with "challenge-format" results.
 
 
